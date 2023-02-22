@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>自作のpreprocessorを使えるようにした</title>
+        <title>絶対的な何か</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">HOME</a></li><li class="chapter-item expanded "><div>My BLOG</div></li><li class="chapter-item expanded "><a href="../blog/2023-02-08.html">４年間のツケの清算</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-07.html">絶対的な何か</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-02.html" class="active">自作のpreprocessorを使えるようにした</a></li><li class="chapter-item expanded "><a href="../blog/2023-01-23.html">部活が終わった今思うこと</a></li><li class="chapter-item expanded "><a href="../blog/chapter_2.html">最近考えること</a></li><li class="chapter-item expanded "><a href="../blog/chapter_1.html">ガチ恋上等</a></li><li class="chapter-item expanded "><div>My MEMO</div></li><li class="chapter-item expanded "><a href="../memo/2023-01-16.html">イギリス旅行用（ロック）</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">HOME</a></li><li class="chapter-item expanded "><div>My BLOG</div></li><li class="chapter-item expanded "><a href="../blog/2023-02-08.html">４年間のツケの清算</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-07.html" class="active">絶対的な何か</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-02.html">自作のpreprocessorを使えるようにした</a></li><li class="chapter-item expanded "><a href="../blog/2023-01-23.html">部活が終わった今思うこと</a></li><li class="chapter-item expanded "><a href="../blog/chapter_2.html">最近考えること</a></li><li class="chapter-item expanded "><a href="../blog/chapter_1.html">ガチ恋上等</a></li><li class="chapter-item expanded "><div>My MEMO</div></li><li class="chapter-item expanded "><a href="../memo/2023-01-16.html">イギリス旅行用（ロック）</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,59 +145,26 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <div class="topic"><i class="fa fa-tag"></i><span>mdbook</span><i class="fa fa-tag"></i><span>プログラミング</span></div>
-<h1 id="自作のpreprocessorを使えるようにした"><a class="header" href="#自作のpreprocessorを使えるようにした">自作のpreprocessorを使えるようにした</a></h1>
-<h2 id="行ったこと"><a class="header" href="#行ったこと">行ったこと</a></h2>
-<ul>
-<li>frontmatterを読みこむプリプロセッサーである<code>mdbook-frontmatter</code>を改良した</li>
-<li>githubactionsでページを作成する際にそれを使えるようにした</li>
-</ul>
-<h2 id="ディレクトリ構成とdockerfile"><a class="header" href="#ディレクトリ構成とdockerfile">ディレクトリ構成とDockerfile</a></h2>
-<p>元のディレクトリは以下のものから始めた。</p>
-<pre><code>.
-├── .github
-│   ├── actions
-│   │   └── build
-│   │       ├── Dockerfile
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-</code></pre>
-<p>自分用にプロプリプロセッサを作ったため、それをgithubactionsで使用することにした。そのためにはどこかに置いて<code>cargo install</code>すれば良いことはわかっていたので、とりあえずルートにおいてDockerfileでのinstallを試みた。</p>
-<pre><code>.
-├── .github
-│   ├── actions
-│   │   └── build
-│   │       ├── Dockerfile
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-├── mdbook-hiromatter #自作のプリプロセッサ
-</code></pre>
-<p>Dockerfileを使ってbuildを行うが、どうやっても<code>cargo install</code>ができない。ディレクトリが参照できず、エラーを吐いて終わってしまう。</p>
-<p>dockerのbuildを行う際は<code>/.github/actions/build</code>の中を参照しているのだから、その中に入れることにした。</p>
-<pre><code class="language-修正版">├── .github
-│   ├── actions
-│   │   └── build
-│   │       ├── Dockerfile
-│   │       ├── mdbook-hiromatter
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-</code></pre>
-<p>これでうまくいった。<code>build</code>ディレクトリの外側はbuild時に読み込めないので、その中に入れるしかないような気がするんだけどどうなのか。</p>
-<p>本当はgithubにあげてしまって<code>cargo install --git</code>したかったんだけど、privateでしか作ってないから無理でした</p>
-<div class="datetime" style="text-align: center; color: gray; font-style: italic; font-size: 90%;">Thursday 02 February 2023</div>
+                        <h1 id="絶対的な何か"><a class="header" href="#絶対的な何か">絶対的な何か</a></h1>
+<p>18歳までの僕は常に誰かと比べられながら生きてきた。「お前ってどんなことでも2番目だよな」って言われ続けた。自分で言うのもなんだけど、高校までの評価軸(主に勉強と部活)においてはかなりできるやつだった。模試で全国100位以内に入ることもあったし、部活でも県の選抜に入ったりしてた。だけど、そのどちらにおいても圧倒的に僕の上を行く奴がいた。冠模試で偏差値80越えは当たり前で僕と同じ大学にトップの成績で入るやつとか、僕と同じスポーツで世代の国代表に入るやつとか。僕はそいつらと比べると大したことないから、学校の奴らは、なんか馬鹿にするような態度で僕と接してた。そんな環境で中高の6年を過ごしていたから、自分でも自分自身を人と比べて、自分で自分を否定しながら生きるようになってしまった。</p>
+<p>この大学の4年間は、絶対的な何かを追い求めることに必死だった。中高時代にズタボロにされた(もはや形成すらされなかった説すらある)自分のアイデンティティを探し続けた。このままいくと自分の幸せまでも相対的に捉えてしまいそうで、そんな状態で死んでしまうのが怖かった。</p>
+<p>結果から言えば、大学の4年間でも確信は得られなかった。だけども、いくつかのヒントはもらえた時間だった。</p>
+<p>まず僕の生きる目的は、自分で自分を好きになることだと考えるようになった。目標じゃなくて目的。自己愛のために生きると決めた。自分を好きになるために自分と向き合うし、他の人と向き合うと決めた。</p>
+<p>とは書いたんだけど、僕は他者との関わりの中でしか幸せを感じられないことにも気付いた。自分で何かを達成してもなんとも思わないし、僕でできることなら誰でもできるよなとまで思うこともある。第一志望の大学に受かった時も、確かに嬉しいは嬉しいのだけれど幸せは感じなかった。だけど、部活のみんなで何かを達成した時や、後輩の成長を見た時、周りのみんながワイワイやっている時とかには幸せを確かに感じられた。自分の幸せを他者に依存してしまうことは情けないのかもしれないけれど、これが僕が4年間かけて導いた一つのことだ。</p>
+<p>あと、これも上に書いたこととちょっと矛盾するかもしれないんだけど、弱い存在としての僕が僕なんだと少しは考えられるようになった。高校までの僕は弱い自分を否定することに必死で、強くなることだけに拘っていた。この4年間で自分が弱いってことを認められるようになって、弱い部分も含めた自分を少しずつ受け入れられるようになってきた。</p>
+<p>でもやっぱり、人と比べがちな自分は消えない。昔みたいに目に見える結果だけで人と比べるようなことは無くなったんだけど、もっと根本の部分で比べてしまうようになった。あいつめっちゃ頑張れる奴だなーとか、あいつめっちゃいい奴なだーとか。そういうのって自分の小ささをダイレクトに感じさせてくるから結構きつい。きついから自分自身を強くしようとするんだけど、その自分すらもどこか外から見てダセえ奴だなって思って嫌な気分になる。</p>
+<p>自分のために生きると決めた以上、人と比べても何にもならないことはわかっている。だけど、人間が社会的な生き物である以上、誰かと比べなきゃ生きていけないのも確かなんだとも思う。社会から離脱して生きようと思った時期もあったのだけれど、多少は社会と繋がりがないと僕はダメっぽい。まあとりあえず死ぬまでは生きようか。</p>
+<div class="datetime" style="text-align: center; color: gray; font-style: italic; font-size: 90%;">Tuesday 07 February 2023</div>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../blog/2023-02-07.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../blog/2023-02-08.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../blog/2023-01-23.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../blog/2023-02-02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -207,11 +174,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../blog/2023-02-07.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../blog/2023-02-08.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../blog/2023-01-23.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../blog/2023-02-02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

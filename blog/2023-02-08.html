@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>自作のpreprocessorを使えるようにした</title>
+        <title>４年間のツケの清算</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">HOME</a></li><li class="chapter-item expanded "><div>My BLOG</div></li><li class="chapter-item expanded "><a href="../blog/2023-02-08.html">４年間のツケの清算</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-07.html">絶対的な何か</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-02.html" class="active">自作のpreprocessorを使えるようにした</a></li><li class="chapter-item expanded "><a href="../blog/2023-01-23.html">部活が終わった今思うこと</a></li><li class="chapter-item expanded "><a href="../blog/chapter_2.html">最近考えること</a></li><li class="chapter-item expanded "><a href="../blog/chapter_1.html">ガチ恋上等</a></li><li class="chapter-item expanded "><div>My MEMO</div></li><li class="chapter-item expanded "><a href="../memo/2023-01-16.html">イギリス旅行用（ロック）</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">HOME</a></li><li class="chapter-item expanded "><div>My BLOG</div></li><li class="chapter-item expanded "><a href="../blog/2023-02-08.html" class="active">４年間のツケの清算</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-07.html">絶対的な何か</a></li><li class="chapter-item expanded "><a href="../blog/2023-02-02.html">自作のpreprocessorを使えるようにした</a></li><li class="chapter-item expanded "><a href="../blog/2023-01-23.html">部活が終わった今思うこと</a></li><li class="chapter-item expanded "><a href="../blog/chapter_2.html">最近考えること</a></li><li class="chapter-item expanded "><a href="../blog/chapter_1.html">ガチ恋上等</a></li><li class="chapter-item expanded "><div>My MEMO</div></li><li class="chapter-item expanded "><a href="../memo/2023-01-16.html">イギリス旅行用（ロック）</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,59 +145,19 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <div class="topic"><i class="fa fa-tag"></i><span>mdbook</span><i class="fa fa-tag"></i><span>プログラミング</span></div>
-<h1 id="自作のpreprocessorを使えるようにした"><a class="header" href="#自作のpreprocessorを使えるようにした">自作のpreprocessorを使えるようにした</a></h1>
-<h2 id="行ったこと"><a class="header" href="#行ったこと">行ったこと</a></h2>
-<ul>
-<li>frontmatterを読みこむプリプロセッサーである<code>mdbook-frontmatter</code>を改良した</li>
-<li>githubactionsでページを作成する際にそれを使えるようにした</li>
-</ul>
-<h2 id="ディレクトリ構成とdockerfile"><a class="header" href="#ディレクトリ構成とdockerfile">ディレクトリ構成とDockerfile</a></h2>
-<p>元のディレクトリは以下のものから始めた。</p>
-<pre><code>.
-├── .github
-│   ├── actions
-│   │   └── build
-│   │       ├── Dockerfile
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-</code></pre>
-<p>自分用にプロプリプロセッサを作ったため、それをgithubactionsで使用することにした。そのためにはどこかに置いて<code>cargo install</code>すれば良いことはわかっていたので、とりあえずルートにおいてDockerfileでのinstallを試みた。</p>
-<pre><code>.
-├── .github
-│   ├── actions
-│   │   └── build
-│   │       ├── Dockerfile
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-├── mdbook-hiromatter #自作のプリプロセッサ
-</code></pre>
-<p>Dockerfileを使ってbuildを行うが、どうやっても<code>cargo install</code>ができない。ディレクトリが参照できず、エラーを吐いて終わってしまう。</p>
-<p>dockerのbuildを行う際は<code>/.github/actions/build</code>の中を参照しているのだから、その中に入れることにした。</p>
-<pre><code class="language-修正版">├── .github
-│   ├── actions
-│   │   └── build
-│   │       ├── Dockerfile
-│   │       ├── mdbook-hiromatter
-│   └── workflows
-│       └── main.yml
-├── .gitignore
-</code></pre>
-<p>これでうまくいった。<code>build</code>ディレクトリの外側はbuild時に読み込めないので、その中に入れるしかないような気がするんだけどどうなのか。</p>
-<p>本当はgithubにあげてしまって<code>cargo install --git</code>したかったんだけど、privateでしか作ってないから無理でした</p>
-<div class="datetime" style="text-align: center; color: gray; font-style: italic; font-size: 90%;">Thursday 02 February 2023</div>
+                        <h1 id="４年間のツケの清算"><a class="header" href="#４年間のツケの清算">４年間のツケの清算</a></h1>
+<p>卒論提出まであと３日となった。この４年間全く勉強してこなかったから、やらなきゃいけないことも多いし、文章を書くのも遅いし非常にきつい。最後の最後にツケが回ってきたなというお気持ち。</p>
+<div class="datetime" style="text-align: center; color: gray; font-style: italic; font-size: 90%;">Wednesday 08 February 2023</div>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../blog/2023-02-07.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../blog/2023-01-23.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../blog/2023-02-07.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -207,11 +167,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../blog/2023-02-07.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../blog/2023-01-23.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../blog/2023-02-07.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
